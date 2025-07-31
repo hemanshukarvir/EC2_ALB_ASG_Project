@@ -5,6 +5,7 @@ resource "aws_launch_template" "tf_asg_ec2_template" {
   instance_type = "t2.micro"
   user_data = filebase64("script.sh")
   vpc_security_group_ids =[aws_security_group.tf_sg_ec2.id]
+  key_name = "Add your Key Name here"
 }
 
 #ASG Creation with EC2 instance as target
